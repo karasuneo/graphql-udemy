@@ -9,7 +9,7 @@ export class Task {
   name: string;
 
   @Field()
-  sueDate: string;
+  dueDate: string;
 
   @Field()
   status: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED';
