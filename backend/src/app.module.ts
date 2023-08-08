@@ -5,6 +5,7 @@ import { join } from 'path';
 import { TaskResolver } from './task/task.resolver';
 import { TaskService } from './task/task.service';
 import { TaskModule } from './task/task.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { TaskModule } from './task/task.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     TaskModule,
+    PrismaModule,
   ],
   providers: [TaskResolver, TaskService],
 })
