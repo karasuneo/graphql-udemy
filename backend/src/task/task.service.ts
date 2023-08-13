@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTaskInput } from './dto/createTask.input';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { Task } from '@prisma/client';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateTaskInput } from './dto/createTask.input';
 
 @Injectable()
 export class TaskService {
