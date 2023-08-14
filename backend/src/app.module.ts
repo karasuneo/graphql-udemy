@@ -6,6 +6,7 @@ import { TaskResolver } from './task/task.resolver';
 import { TaskService } from './task/task.service';
 import { TaskModule } from './task/task.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { PrismaModule } from './prisma/prisma.module';
     }),
     TaskModule,
     PrismaModule,
+    UserModule,
   ],
   providers: [TaskResolver, TaskService],
 })
