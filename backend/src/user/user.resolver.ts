@@ -1,10 +1,10 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { UserService } from './user.service';
-import { CreateUserInput } from './dto/createUser.input';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { User } from '@prisma/client';
+import { CreateUserInput } from './dto/createUser.input';
+import { UserService } from './user.service';
 import { User as UserModel } from './models/user.model';
-import { Query } from '@nestjs/common';
 import { GetUserArgs } from './dto/getUser.args';
+import { UseGuards } from '@nestjs/common';
 
 @Resolver()
 export class UserResolver {
