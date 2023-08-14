@@ -3,6 +3,8 @@ import { UserService } from './user.service';
 import { CreateUserInput } from './dto/createUser.input';
 import { User } from '@prisma/client';
 import { User as UserModel } from './models/user.model';
+import { Query } from '@nestjs/common';
+import { GetUserArgs } from './dto/getUser.args';
 
 @Resolver()
 export class UserResolver {
@@ -13,5 +15,10 @@ export class UserResolver {
     @Args('createUserInput') createUserInput: CreateUserInput,
   ): Promise<User> {
     return await this.userService.createUser(createUserInput);
+  }
+
+  @Query(() => UserModel, { nullable: true })
+  async getUser(@Args() getUserArgs: GetUserArgs): Promise<User> {
+    return await this.userService.getUser(getUserArgs.email);
   }
 }
